@@ -2,11 +2,6 @@ package project2;
 
 class BoardUtilities {
 	
-	public static final int DEFAULT_BOARD_SIZE = 10; // typical rule of the game
-	
-	private static String[] boardIdentifications = new String[]{"Player 1's Board    ", "Player 2's Targets  ",
-		"Player 1's Targets  ", "Player 2's Board"};
-	
 	/*
 	 * This class contains some general utility methods for working with boards, used for
 	 * placing ships on boards and showing the player everything he or she is allowed to
@@ -15,6 +10,11 @@ class BoardUtilities {
 	 * 4 boards involved in a game. Also includes functions for determining whether a
 	 * location is on the board
 	 */
+	
+	public static final int DEFAULT_BOARD_SIZE = 10; // typical rule of the game
+	
+	private static String[] boardIdentifications = new String[]{"Player 1's Board    ", "Player 2's Targets  ",
+		"Player 1's Targets  ", "Player 2's Board"};
 	
 	/***
 	 * Determines whether an integer pair is on a character board
