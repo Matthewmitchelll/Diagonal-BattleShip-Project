@@ -1,67 +1,65 @@
 # Diagonal-BattleShip-Project
 
-BRIEF DESCRIPTIONS FOR WHAT EVERY FILE IN THE PROJECT IS USED FOR:
+Brief descriptions for what every file in the project is used for:
 
-RUNSIMS.JAVA - STARTING POINT OF THE PROGRAM, RUNS A GAME OF BATTLESHIP BETWEEN HUMAN
-               AND COMPUTER, AS WELL AS SIMULATIONS BETWEEN COMPUTERS
+RunSims.java - starting point of the program, runs a game of battleship between human
+               and computer, as well as simulations between computers
 
-BATTLESHIP.JAVA - USED FOR RUNNING A GAME BETWEEN A HUMAN AND COMPUTER
+BattleShip.java - used for running a game between a human and computer
 
-SIMULATOR.JAVA - ABSTRACT CLASS THAT LAYS THE FOUNDATION FOR SIMULATORS, TAKING IN
-                 THE NUMBER OF GAMES TO SIMULATE AND A BOOLEAN VERBOSITY PARAMETER
+Simulator.java - abstract class that lays the foundation for simulators, taking in
+                 the number of games to simulate and a boolean verbosity parameter
 
-BATTLESIMULATOR.JAVA - USED FOR RUNNING A GAME BETWEEN TWO COMPUTERS
+BattleSimulator.java - used for running a game between two computers
 
-TESTSIMULATOR.JAVA - USED FOR TESTING VARIOUS STRATEGIES BY PLAYING A GAME BETWEEN
-                     A COMPUTER RUNNING A STRATEGY IN QUESTION AGAINST A DUMMY COMPUTER
+TestSimulator.java - used for testing various strategies by playing a game between
+                     a computer running a strategy in question against a dummy computer
 
-STATE.JAVA - ABSTRACT CLASS REPRESENTING THE STATE OF A GAME FOR A PLAYER
+State.java - abstract class representing the state of a game for a player
 
-PLAYERSTATE.JAVA - REPRESENTS A HUMAN'S STATE, USED FOR ASKING THE PLAYER HOW HE/SHE WOULD
-                   LIKE TO PLACE HIS/HER SHIPS
+PlayerState.java - represents a human's state, used for asking the player how he/she would
+                   like to place his/her ships
 
-COMPUTERSTATE.JAVA - REPRESENTS A COMPUTER'S STATE, USED TO SET THE STRATEGY THE COMPUTER
-                     WILL RUN AND RANDOMLY CONFIGURE ITS SHIPS
+ComputerState.java - represents a computer's state, used to set the strategy the computer
+                     will run and randomly configure its ships
 
-TARGETER.JAVA - ABSTRACT CLASS LAYING THE GROUNDWORK FOR TARGETERS, WHICH COMPUTERS USE TO
-                EXECUTE THEIR STRATEGIES
+Targeter.java - abstract class laying the groundwork for Targeter objects, which computers use to
+                execute their strategies
 
-RANDOMTARGETER.JAVA - TARGETER USED TO TARGET RANDOM LOCATIONS
+RandomTargeter.java - targeter used to target random locations
 
-SEEKINGTARGETER.JAVA - TARGETER USED TO SEEK LOCATIONS NEXT TO KNOWN OCCUPIED SQUARES
+SeekingTargeter.java - targeter used to seek locations next to known occupied squares
 
-PRIORITIZER.JAVA - ABSTRACT CLASS (EXTENDING TARGETER) THAT LAYS THE GROUNDWORK FOR TARGETERS
-                   THAT EMPLOY MEASURES OF UTILITY (AND NO RANDOMNESS) IN SELECTING THEIR NEXT
-                   SQUARE TO TARGET
+Prioritizer.java - abstract class (extending Targeter) that lays the groundwork for Targeters
+                   that employ measures of utility (and no randomness) in selecting their next
+                   square to target
 
-WEIGHTEDPRIORITIZER.JAVA - PRIORITIZER THAT TARGETS LOCATIONS BASED ON A WEIGHTED SUM OF 5
-                           MEASURES OF UTILITY AND A PRIMITIVE FUNCTION FOR WEEDING OUT
-                           IMPOSSIBLE SQUARES
+WeightedPrioritizer.java - Prioritizer that targets locations based on a weighted sum of 5
+                           measures of utility and a primitive function for weeding out
+                           impossible squares
 
-COMMANDER.JAVA - PRIORITIZER THAT TARGETS LOCATIONS BASED ON DIFFERENT MEASURES OF UTILITY FROM
-                 THE WEIGHTEDPRIORITIZER, AND USING A FULLY EXHAUSTIVE ALGORITHM FOR RULING OUT
-                 ANY IMPOSSIBLE SQUARES
+Commander.java - Prioritizer that targets locations based on different measures of utility from
+                 the WeightedPrioritizer, and using a fully exhaustive algorithm for ruling out
+                 any impossible squares
 
-LOCATION.JAVA - REPRESENTS A LOCATION ON THE BOARD, DEFINES USEFUL DIRECTIONAL METHODS
+Location.java - represents a location on the board, defines useful directional methods
 
-SMARTLOCATION.JAVA - EXTENDS LOCATION BY STORING NUMEROUS MEASURES OF A LOCATION'S UTILITY
-                     AND SOME METHODS TO RESET AND MAINTAIN THEM THROUGHOUT A GAME, USED BY
-                     THE WEIGHTEDPRIORITIZER CLASS
+SmartLocation.java - extends location by storing numerous measures of a location's utility
+                     and some methods to reset and maintain them throughout a game, used by
+                     the WeightedPrioritizer class
 
-TRACKERLOCATION.JAVA - EXTENDS SMARTLOCATION BY KEEPING TRACK OF ADDITIONAL MEAURES OF UTILITY
-                       AND SOME METHODS TO RESET AND MAINTAIN THEM, USED BY THE COMMANDER CLASS
+TrackerLocation.java - extends SmartLocation by keeping track of additional meaures of utility
+                       and some methods to reset and maintain them, used by the Commander class
 
-TARGETUTILITIES.JAVA - CONTAINS FUNCTIONS FOR UPDATING MANY OF SMARTLOCATION'S AND TARGETLOCATION'S
-                       MEASURES OF UTILITY
+TargetUtilities.java - contains functions for updating many of SmartLocation's and TargetLocation's
+                       measures of utility
 
-BOARDUTILITIES.JAVA - STORES UTILITY METHODS NEEDED DURING A GAME, SUCH AS ONES TO PRINT
-                      BOARDS AND LAY OUT SHIPS
+BoardUtilities.java - stores utility methods needed during a game, such as ones to print
+                      boards and lay out ships
 
-SHIP.JAVA - STORES INFO ABOUT SHIPS (NUMBER OF SHIPS/SIZES OF SHIPS/TOTAL SQUARES OCCUPIED)
+Ship.java - stores info about ships (number of ships/sizes of ships/total squares occupied)
 
-DIRECTION.JAVA - ENUMERATES ALL 8 POSSIBLE DIRECTIONS
+Direction.java - enumerates all 8 possible ship orientations
 
-WEIGHTFINDER.JAVA - USED TO FIND THE BEST CONFIGURATION OF WEIGHT FOR THE WEIGHTEDPRIORITIZER AND
-                    COMMANDER TARGETERS (MOST RECENTLY UPDATED TO FIND WEIGHTS FOR THE COMMANDER)
-
-DUMP.JAVA - FILE TO STORE UNUSED/OBSOLETE PORTIONS OF CODE (FOR REFERENCE)
+WeightFinder.java - used to find the best configuration of weights for the WeightedPrioritizer and
+                    Commander targeters (most recently updated to find weights for the commander)
